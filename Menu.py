@@ -9,16 +9,29 @@ class Menu:
 
     def delete_item(self, item_id):
         for item in self.menu_items:
-            if item.id == item_id:
+            if str(item.id) == item_id:
                 self.menu_items.remove(item)
                 print("Item deleted successfully.")
                 return True
         print("Item Not Found")
-
-    def view_menu_items(self):
+    def find_item(self, item_id):
         for item in self.menu_items:
-            print(item)
+            if str(item.id) == item_id:
+                return item
+        return None
+    # def view_menu_items(self):
+    #     for item in self.menu_items:
+    #         print(item)
+    def view_menu_items(self):
+        print("===================== Menu Item's ======================")
+        print( f"  ID   |  Item  |  Price ")
+        print("-----------------------------------------------------------")
 
+
+        for item in self.menu_items:
+            # print(item)
+            print(f"{item.id}\t {item.name}\t {item.price} ")
+        print("===========================================================")
 
 # Menu Item
 class MenuItem:

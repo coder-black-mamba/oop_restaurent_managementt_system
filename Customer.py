@@ -8,9 +8,9 @@ class Customer(User):
         super().__init__(name, phone_number, email, address)
         self.cart = Cart()
         self.restaurant=None
-    def set_restaurant(self, restaurant):
+    def lock_restaurant(self, restaurant):
         self.restaurant = restaurant
-        print("Restaurant set successfully.")
+        print(f"Hello! Mr/Mrs {self.name} :). Please Go With ..... {restaurant.name}.")
 
     def view_menu(self):
         self.restaurant.menu.view_menu_items()
@@ -23,7 +23,11 @@ class Customer(User):
 
     def pay_bill(self):
         total = self.cart.calculate_total()
+        print(f"====================== {self.restaurant.name} ======================")
         print(f"Total bill amount: {total}")
         self.cart.clear_cart()
-        print("Bill paid successfully. Cart cleared.")
+        print("Bill paid successfully.")
+        print(f"Thanks For Visiting {self.restaurant.name}. Come Again.")
+        print(f"====================== Made With LV By Abu Sayed ======================")
+
 

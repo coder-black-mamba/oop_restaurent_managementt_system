@@ -4,6 +4,7 @@ class HR:
 
     def add_employee(self, employee):
         self.employee_list.append(employee)
+        print(f"{employee.name} Joined Successfully :)")
 
     def delete_employee(self, employee_id):
         for employee in self.employee_list:

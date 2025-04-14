@@ -4,7 +4,7 @@ class Cart:
     def __init__(self):
         self.items = []
     def view_cart(self):
-        print("===================== Cart Item's ======================")
+        print("===================== Cart Item's ========================")
         print( f"Item | Quantity | Unit Price | Net Price |")
         print("-----------------------------------------------------------")
 

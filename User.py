@@ -27,20 +27,24 @@ class Employee(User):
 
 
 class Admin(User):
-    def __init__(self, name, phone_number, email, address):
+    def __init__(self, name, phone_number, email, address,password):
         super().__init__(name, phone_number, email, address)
         self.restaurant = None
+        self.password = password
 
     def set_restaurant(self, restaurant):
         self.restaurant = restaurant
-        print("Restaurant set successfully.")
+        # print(f"!!! [ {self.name} ] Is Set As An Admin In [ {restaurant.name} ] !!!")
 
     def add_employee(self, employee):
-        self.restaurant.hr.employee_list.append(employee)
+        self.restaurant.hr.add_employee(employee)
 
     def view_employee_list(self):
         for employee in self.restaurant.hr.employee_list:
             print(employee)
+
+    def delete_employee(self,emp_id):
+        self.restaurant.hr.delete_employee(emp_id)
 
     # menu section
     def view_menu_items(self):

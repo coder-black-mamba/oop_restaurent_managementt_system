@@ -16,6 +16,5 @@ class Restaurant:
 
     @property
     def hr(self):
-
         return self.__hr
 
