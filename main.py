@@ -3,7 +3,6 @@ from User import Admin, Employee
 from Menu import MenuItem , Menu
 from Customer import Customer
 
-
 # main restaurant class
 hanif_er_kalavuna =  Restaurant("Hanif Er Kalavuna", "Best Food in Town", "Dhaka")
 admin =  Admin("Sayed", "123456789", "XXXXXXXXXXXXXXX", "Dhaka","12345")
