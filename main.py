@@ -52,10 +52,17 @@ print("===========================================================")
 
 name = input("Hello Sir Please Input Your Name : ")
 
-def customer_menu():
-    phone = input("Please Input Your Phone Number : ")
-    email = input("Please Input Your Email : ")
-    address = input("Please Input Your Address : ")
+def customer_menu(name,is_admin=False):
+    if not is_admin:
+        phone = input("Please Input Your Phone Number : ")
+        email = input("Please Input Your Email : ")
+        address = input("Please Input Your Address : ")
+    else:
+        name="admin"
+        phone="*********"
+        email="*********"
+        address = "*********"
+
 
     customer = Customer(name, phone, email, address)
     customer.lock_restaurant(hanif_er_kalavuna)
@@ -120,15 +127,15 @@ if name =="Sayed":
                 admin.view_menu_items()
             elif choice == "5":
                 name = input("Enter menu item name: ")
-                price = input("Enter menu item price: ")
-                quantity = input("Enter menu item quantity: ")
+                price = int(input("Enter menu item price: "))
+                quantity = int(input("Enter menu item quantity: "))
                 item = MenuItem(name, price, quantity)
                 admin.add_menu_item(item)
             elif choice == "6":
                 item_id = input("Enter menu item ID: ")
                 admin.delete_menu_item(item_id)
             elif choice == "7":
-                customer_menu()
+                customer_menu(name,True)
             elif choice == "8":
                 break
             else:
@@ -136,7 +143,7 @@ if name =="Sayed":
     else:
         print("Wrong Password")
 else:
-    customer_menu()
+    customer_menu(name=name,is_admin=False)
 
 
 
